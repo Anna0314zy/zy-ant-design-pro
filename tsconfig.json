@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "esnext",
     "baseUrl": "./",
     "target": "esnext",
     "moduleResolution": "node",

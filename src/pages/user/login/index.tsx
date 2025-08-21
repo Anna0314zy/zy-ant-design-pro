@@ -27,7 +27,7 @@ import { Footer } from '@/components';
 import { login } from '@/services/ant-design-pro/api';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
 import Settings from '../../../../config/defaultSettings';
-
+import  '../../../demo/umiRoutes.ts'
 const useStyles = createStyles(({ token }) => {
   return {
     action: {
