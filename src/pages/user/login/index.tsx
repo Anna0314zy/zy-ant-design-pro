@@ -27,7 +27,7 @@ import { Footer } from '@/components';
 import { login } from '@/services/ant-design-pro/api';
 import { getFakeCaptcha } from '@/services/ant-design-pro/login';
 import Settings from '../../../../config/defaultSettings';
-import  '../../../demo/umiRoutes.ts'
+
 const useStyles = createStyles(({ token }) => {
   return {
     action: {
@@ -134,7 +134,6 @@ const Login: React.FC = () => {
     try {
       // 登录
       const msg = await login({ ...values, type });
-      console.log('Login',msg)
       if (msg.status === 'ok') {
         const defaultLoginSuccessMessage = intl.formatMessage({
           id: 'pages.login.success',

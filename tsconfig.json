@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "module": "esnext",
     "baseUrl": "./",
     "target": "esnext",
     "moduleResolution": "node",
@@ -10,7 +9,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "declaration": true,
+    "declaration": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "paths": {

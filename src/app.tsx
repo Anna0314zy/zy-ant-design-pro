@@ -16,8 +16,8 @@ import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import '@ant-design/v5-patch-for-react-19';
 
-const isDev = process.env.NODE_ENV === 'development';
-const isDevOrTest = isDev || process.env.CI;
+const isDev =
+  process.env.NODE_ENV === 'development' || process.env.CI;
 const loginPath = '/user/login';
 
 /**
@@ -73,9 +73,9 @@ export const layout: RunTimeLayoutConfig = ({
     avatarProps: {
       src: initialState?.currentUser?.avatar,
       title: <AvatarName />,
-      render: (_, avatarChildren) => (
-        <AvatarDropdown>{avatarChildren}</AvatarDropdown>
-      ),
+      render: (_, avatarChildren) => {
+        return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
+      },
     },
     waterMarkProps: {
       content: initialState?.currentUser?.name,
@@ -108,7 +108,7 @@ export const layout: RunTimeLayoutConfig = ({
         width: '331px',
       },
     ],
-    links: isDevOrTest
+    links: isDev
       ? [
           <Link key="openapi" to="/umi/plugin/openapi" target="_blank">
             <LinkOutlined />
@@ -125,7 +125,7 @@ export const layout: RunTimeLayoutConfig = ({
       return (
         <>
           {children}
-          {isDevOrTest && (
+          {isDev && (
             <SettingDrawer
               disableUrlParams
               enableDarkTheme
@@ -151,6 +151,6 @@ export const layout: RunTimeLayoutConfig = ({
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const request: RequestConfig = {
-  baseURL: isDev ? '' : 'https://proapi.azurewebsites.net',
+  baseURL: '/',
   ...errorConfig,
 };

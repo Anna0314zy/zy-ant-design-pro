@@ -4,7 +4,6 @@ import { TestBrowser } from '@@/testBrowser';
 import { fireEvent, render } from '@testing-library/react';
 import React, { act } from 'react';
 
-
 const waitTime = (time: number = 100) => {
   return new Promise((resolve) => {
     setTimeout(() => {
