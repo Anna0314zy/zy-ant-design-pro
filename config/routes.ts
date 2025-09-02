@@ -120,6 +120,7 @@ export default [
             icon: 'smile',
             path: '/list/search/articles',
             component: './list/search/articles',
+            hideInBreadcrumb:true
           },
           {
             name: 'projects',
@@ -260,6 +261,24 @@ export default [
   {
     path: '/',
     redirect: '/dashboard/analysis',
+  },
+  {
+    name: 'zy',
+    icon: 'user',
+    path: '/zy',
+    routes: [
+      {
+        path: '/zy',
+        redirect: '/zy/dataFlow',
+      },
+      {
+        name: 'dataFlow',
+        icon: 'smile',
+        path: '/zy/dataFlow',
+        component: './dataFlow',
+        access: 'canReadDataFlow',
+      }
+    ],
   },
   {
     component: '404',

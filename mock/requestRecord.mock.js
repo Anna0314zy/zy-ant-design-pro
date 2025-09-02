@@ -1,7 +1,7 @@
 module.exports = {
   'GET /api/currentUser': {
     data: {
-      name: 'Serati Ma',
+      name: 'zou yu',
       avatar:
         'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
       userid: '00000001',
@@ -26,6 +26,7 @@ module.exports = {
       },
       address: '西湖区工专路 77 号',
       phone: '0752-268888888',
+      role:['/zy/dataFlow','/dashboard/analysis']
     },
   },
   'GET /api/rule': {

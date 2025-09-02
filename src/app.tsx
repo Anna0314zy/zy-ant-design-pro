@@ -30,11 +30,17 @@ export async function getInitialState(): Promise<{
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
   const fetchUserInfo = async () => {
+    const useInfo = localStorage.getItem('user_info');
+    if (useInfo) {
+      return JSON.parse(useInfo);
+    }
     try {
+      
       const msg = await queryCurrentUser({
         skipErrorHandler: true,
       });
-      return msg.data;
+       localStorage.setItem('user_info', JSON.stringify(msg.data));
+      return ;
     } catch (_error) {
       history.push(loginPath);
     }
@@ -48,6 +54,7 @@ export async function getInitialState(): Promise<{
     )
   ) {
     const currentUser = await fetchUserInfo();
+    console.log('currentUser:', currentUser);
     return {
       fetchUserInfo,
       currentUser,
@@ -154,3 +161,9 @@ export const request: RequestConfig = {
   baseURL: '/',
   ...errorConfig,
 };
+
+export function patchRoutes({ routes, routeComponents }:any) {
+  console.log('patchRoutes', routes, routeComponents);
+}
+
+

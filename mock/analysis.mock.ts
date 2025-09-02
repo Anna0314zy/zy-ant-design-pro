@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import type { Request, Response } from 'express';
 import type { AnalysisData, DataItem, RadarData } from '../src/pages/dashboard/analysis/data';
-
+import { waitTime } from '@/utils'
 // mock data
 const visitData: DataItem[] = [];
 const beginDay = new Date().getTime();
@@ -199,7 +199,7 @@ const getFakeChartData: AnalysisData = {
   radarData,
 };
 
-const fakeChartData = (_: Request, res: Response) => {
+const fakeChartData = async (_: Request, res: Response) => {
   return res.json({
     data: getFakeChartData,
   });

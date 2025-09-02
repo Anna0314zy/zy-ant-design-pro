@@ -31,6 +31,7 @@ const getAccess = () => {
 export default {
   // 支持值为 Object 和 Array
   'GET /api/currentUser': (_req: Request, res: Response) => {
+    console.log('currentUser----:', _req,res);
     if (!getAccess()) {
       res.status(401).send({
         data: {
@@ -95,6 +96,7 @@ export default {
         },
         address: '西湖区工专路 77 号',
         phone: '0752-268888888',
+        role:['/zy/dataFlow','/dashboard/analysis']
       },
     });
   },

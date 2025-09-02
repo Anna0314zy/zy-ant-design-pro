@@ -150,7 +150,7 @@ const Analysis: FC<AnalysisProps> = () => {
           offlineChartData={data?.offlineChartData || []}
           handleTabChange={handleTabChange}
         />
-      </Suspense>
+      </Suspense> 
     </GridContent>
   );
 };
