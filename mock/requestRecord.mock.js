@@ -25,8 +25,7 @@ module.exports = {
         city: { label: '杭州市', key: '330100' },
       },
       address: '西湖区工专路 77 号',
-      phone: '0752-268888888',
-      role:['/zy/dataFlow','/dashboard/analysis']
+      phone: '0752-268888888'
     },
   },
   'GET /api/rule': {

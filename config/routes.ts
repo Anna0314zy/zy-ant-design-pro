@@ -266,6 +266,7 @@ export default [
     name: 'zy',
     icon: 'user',
     path: '/zy',
+    access: 'canRead',
     routes: [
       {
         path: '/zy',
@@ -276,7 +277,7 @@ export default [
         icon: 'smile',
         path: '/zy/dataFlow',
         component: './dataFlow',
-        access: 'canReadDataFlow',
+        access: 'canRead',
       }
     ],
   },

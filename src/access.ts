@@ -9,7 +9,7 @@ export default function access(
   
   return {
     canReadFoo: true,
-    canReadDataFlow: (foo:any) => {
+    canRead: (foo:any) => {
       console.log('canReadDataFlow', foo,currentUser,foo.path,currentUser?.role?.includes(foo.path));
       return currentUser?.role?.includes(foo.path);
     },
